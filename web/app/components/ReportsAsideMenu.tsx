@@ -2,17 +2,17 @@ import { NavLink } from "@remix-run/react";
 
 const ReportsAsideMenu = () => {
   return (
-    <aside className="w-[15%] min-w-[180px] bg-[#282c34] text-white p-5 fixed h-full">
-      <h2 className="text-xl font-bold">Reports</h2>
+    <aside className="w-[18%] min-w-[220px] bg-[#282c34] text-white p-8 fixed h-full">
+      <h2 className="text-3xl font-bold mb-8">Reports</h2>
       <nav>
-        <ul className="mt-8 space-y-2.5">
+        <ul className="mt-8 space-y-4">
           <li>
             <NavLink
               to="destinations"
               className={({ isActive }) => 
                 isActive 
-                  ? "block p-2.5 rounded bg-[#61dafb] text-black"
-                  : "block p-2.5 rounded hover:bg-gray-700"
+                  ? "block p-4 rounded-lg bg-[#61dafb] text-black text-xl font-semibold"
+                  : "block p-4 rounded-lg hover:bg-gray-700 text-xl font-semibold"
               }
             >
               Destinos
@@ -23,8 +23,8 @@ const ReportsAsideMenu = () => {
               to="users"
               className={({ isActive }) => 
                 isActive 
-                  ? "block p-2.5 rounded bg-[#61dafb] text-black"
-                  : "block p-2.5 rounded hover:bg-gray-700"
+                  ? "block p-4 rounded-lg bg-[#61dafb] text-black text-xl font-semibold"
+                  : "block p-4 rounded-lg hover:bg-gray-700 text-xl font-semibold"
               }
             >
               Usuarios
@@ -35,8 +35,8 @@ const ReportsAsideMenu = () => {
               to="preferences"
               className={({ isActive }) => 
                 isActive 
-                  ? "block p-2.5 rounded bg-[#61dafb] text-black"
-                  : "block p-2.5 rounded hover:bg-gray-700"
+                  ? "block p-4 rounded-lg bg-[#61dafb] text-black text-xl font-semibold"
+                  : "block p-4 rounded-lg hover:bg-gray-700 text-xl font-semibold"
               }
             >
               Preferencias
@@ -47,8 +47,8 @@ const ReportsAsideMenu = () => {
               to="statistics"
               className={({ isActive }) => 
                 isActive 
-                  ? "block p-2.5 rounded bg-[#61dafb] text-black"
-                  : "block p-2.5 rounded hover:bg-gray-700"
+                  ? "block p-4 rounded-lg bg-[#61dafb] text-black text-xl font-semibold"
+                  : "block p-4 rounded-lg hover:bg-gray-700 text-xl font-semibold"
               }
             >
               Estadísticas

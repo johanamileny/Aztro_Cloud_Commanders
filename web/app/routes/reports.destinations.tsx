@@ -1,7 +1,6 @@
 import { useLoaderData } from "@remix-run/react";
 import { loader } from "~/loaders/destinationsLoader";
 import { Destination } from "~/interfaces/destination";
-import "~/styles/reportDestination.css";
 
 export { loader };
 

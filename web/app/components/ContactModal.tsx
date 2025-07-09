@@ -58,8 +58,8 @@ export default function ContactModal({
       <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
 
       <div className="fixed inset-0 flex items-center justify-center p-4">
-        <Dialog.Panel className="w-full max-w-3xl rounded-lg bg-white p-6 shadow-xl">
-          <Dialog.Title className="text-2xl font-semibold text-gray-900 mb-4">
+        <Dialog.Panel className="w-full max-w-4xl rounded-2xl bg-white p-10 shadow-2xl">
+          <Dialog.Title className="text-3xl font-bold text-gray-900 mb-8">
             Enviar promoción a {user.nombre}
           </Dialog.Title>
 
@@ -137,10 +137,10 @@ export default function ContactModal({
                 </div>
               </div>
 
-              <div className="mb-6">
+              <div className="mb-8">
                 <label
                   htmlFor="recipient-email"
-                  className="block text-sm font-medium text-gray-700 mb-1"
+                  className="block text-xl font-semibold text-gray-700 mb-2"
                 >
                   Destinatario
                 </label>
@@ -149,15 +149,15 @@ export default function ContactModal({
                   id="recipient-email"
                   value={recipientEmail}
                   onChange={(e) => setRecipientEmail(e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded-md"
+                  className="w-full p-4 border border-gray-300 rounded-lg text-lg"
                   aria-label="Email del destinatario"
                 />
               </div>
 
-              <div className="mb-6">
+              <div className="mb-8">
                 <label
                   htmlFor="email-subject"
-                  className="block text-sm font-medium text-gray-700 mb-1"
+                  className="block text-xl font-semibold text-gray-700 mb-2"
                 >
                   Asunto
                 </label>
@@ -166,16 +166,16 @@ export default function ContactModal({
                   id="email-subject"
                   value={emailSubject}
                   onChange={(e) => setEmailSubject(e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded-md"
+                  className="w-full p-4 border border-gray-300 rounded-lg text-lg"
                   aria-label="Asunto del email"
                 />
               </div>
 
-              <div className="mb-6">
-                <div className="flex justify-between items-center mb-1">
+              <div className="mb-8">
+                <div className="flex justify-between items-center mb-2">
                   <label
                     htmlFor="email-content"
-                    className="block text-sm font-medium text-gray-700"
+                    className="block text-xl font-semibold text-gray-700"
                   >
                     Contenido
                   </label>
@@ -207,7 +207,7 @@ export default function ContactModal({
 
                 {previewMode ? (
                   <div
-                    className="w-full p-4 border border-gray-300 rounded-md bg-white h-[400px] overflow-auto"
+                    className="w-full p-6 border border-gray-300 rounded-lg bg-white h-[400px] overflow-auto text-lg"
                     dangerouslySetInnerHTML={{ __html: emailHtmlContent }}
                   />
                 ) : (
@@ -216,11 +216,11 @@ export default function ContactModal({
                     value={emailContent}
                     onChange={(e) => setEmailContent(e.target.value)}
                     rows={15}
-                    className="w-full p-2 border border-gray-300 rounded-md font-sans text-sm"
+                    className="w-full p-4 border border-gray-300 rounded-lg font-sans text-lg"
                     aria-label="Contenido del email"
                   />
                 )}
-                <p className="mt-1 text-xs text-gray-500">
+                <p className="mt-2 text-base text-gray-500">
                   {previewMode
                     ? "Visualizando la versión HTML que se enviará por correo"
                     : "Editando la versión de texto plano (la versión HTML se generará automáticamente)"}
@@ -229,22 +229,22 @@ export default function ContactModal({
             </>
           )}
 
-          <div className="flex justify-end gap-4">
+          <div className="flex justify-end gap-6">
             <button
               onClick={onClose}
-              className="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300"
+              className="px-6 py-3 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 text-lg"
               disabled={isSending}
             >
               Cancelar
             </button>
             <button
               onClick={handleSendAndClose}
-              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center min-w-[100px]"
+              className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center min-w-[120px] text-lg"
               disabled={isLoading || isSending}
             >
               {isSending ? (
                 <>
-                  <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <svg className="animate-spin -ml-1 mr-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>

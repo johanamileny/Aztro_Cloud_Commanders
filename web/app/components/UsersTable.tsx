@@ -1,4 +1,3 @@
-import "~/styles/users.css";
 import { useState } from "react";
 import ContactModal from "./ContactModal";
 
@@ -55,14 +54,14 @@ export default function UsersTable({
 
   return (
     <>
-      <div className="table-container">
-        <table className="table">
+      <div className="table-container text-lg">
+        <table className="table text-xl">
           <thead className="table-header">
             <tr>
-              <th className="w-1/5">Nombre</th>
-              <th className="w-1/5">Email</th>
-              <th className="w-2/5">Destinos Recomendados</th>
-              <th className="w-1/5">Contacto</th>
+              <th className="w-1/5 py-6">Nombre</th>
+              <th className="w-1/5 py-6">Email</th>
+              <th className="w-2/5 py-6">Destinos Recomendados</th>
+              <th className="w-1/5 py-6">Contacto</th>
             </tr>
           </thead>
           <tbody>

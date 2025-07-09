@@ -1,5 +1,4 @@
 import { useLoaderData, useNavigate } from "@remix-run/react";
-import "~/styles/preferences.css";
 import { preferencesLoader } from "../loaders/preferencesLoader";
 import { Preferencia } from "../interfaces/preference";
 import PreferencesTable from "../components/PreferencesTable";

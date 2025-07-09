@@ -34,19 +34,18 @@ export default function Plans() {
   };
 
   return (
-    <div className="w-full bg-[#f8f9fa] min-h-screen">
+    <div className="w-full bg-[#f8f9fa] min-h-screen text-xl">
       {/* Navigation Bar */}
-      <div className="bg-white shadow-sm border-b border-gray-100 py-4 px-8 flex justify-between items-center">
+      <div className="bg-white shadow-sm border-b border-gray-100 py-6 px-12 flex justify-between items-center text-2xl">
         <Link 
           to="/destino" 
-          className="flex items-center gap-2 text-[#0033A0] hover:text-[#005EB8] transition-colors"
+          className="flex items-center gap-3 text-[#0033A0] hover:text-[#005EB8] transition-colors text-xl"
         >
-          <i className="fa-solid fa-arrow-left text-sm"></i>
-          <span className="text-sm font-medium">Volver a destinos</span>
+          <i className="fa-solid fa-arrow-left text-lg"></i>
+          <span className="text-lg font-medium">Volver a destinos</span>
         </Link>
       </div>
-
-      <div className="w-full relative h-[50vh] min-h-[400px] bg-gradient-to-br from-[#0033A0] to-[#002169] overflow-hidden">
+      <div className="w-full relative h-[60vh] min-h-[500px] bg-gradient-to-br from-[#0033A0] to-[#002169] overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-[url('https://amadeus.com/static/custom/resources/20230829162608/dist/images/section-texture-bright.svg')] bg-center opacity-10"></div>
         
@@ -500,33 +499,7 @@ export default function Plans() {
             </div>
 
             {/* Footer Banner */}
-            <div className="mb-16 rounded-xl overflow-hidden shadow-xl relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#002169]/80 to-[#0033A0]/50 z-10 group-hover:from-[#002169]/70 group-hover:to-[#0033A0]/40 transition-all duration-500"></div>
-              <img 
-                src="/imagenes/trs-cancun.jpg" 
-                alt="Promoción especial" 
-                className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 z-20 flex items-center justify-between px-10">
-                <div>
-                  <div className="text-[#75B000] text-sm font-medium mb-2">OFERTA EXCLUSIVA</div>
-                  <h3 className="text-white text-2xl font-light mb-3">Reserva tu paquete completo</h3>
-                  <p className="text-white/80 text-sm max-w-md">
-                    Obtén un 15% de descuento al reservar vuelo + hotel + traslados
-                  </p>
-                </div>
-                <a 
-                  href="https://amadeus.com/en/travel-sellers/overview"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-white text-[#0033A0] px-6 py-3 rounded-lg font-medium shadow-lg hover:bg-[#f0f7ff] transition-colors"
-                >
-                  Ver ofertas
-                </a>
-              </div>
-            </div>
           </div>
-
           <div className={activeTab === "detalles" ? "block" : "hidden"}>
             {/* Detalles del destino content */}
             <div className="bg-white rounded-xl shadow-lg p-8 mb-16">
@@ -607,14 +580,12 @@ export default function Plans() {
           </div>
         </div>
       </div>
-
       {/* Modales */}
       <WhatsAppChat 
         isOpen={isWhatsAppChatOpen} 
         onClose={handleCloseWhatsAppChat} 
         phoneNumber={supportPhoneNumber}
       />
-      
       <CallModal 
         isOpen={isCallModalOpen} 
         onClose={handleCloseCallModal}

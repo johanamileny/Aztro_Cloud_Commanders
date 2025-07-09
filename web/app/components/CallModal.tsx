@@ -74,14 +74,14 @@ const CallModal: React.FC<CallModalProps> = ({ isOpen, onClose, phoneNumber }) =
 
   return (
     <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center">
-      <div className="bg-white w-full max-w-sm rounded-xl shadow-2xl overflow-hidden p-6">
+      <div className="bg-white w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden p-10">
         <div className="flex flex-col items-center">
           {/* Avatar y estado */}
-          <div className="w-20 h-20 rounded-full bg-[#0033A0] flex items-center justify-center mb-4 text-white text-3xl">
+          <div className="w-28 h-28 rounded-full bg-[#0033A0] flex items-center justify-center mb-6 text-white text-5xl">
             <i className="fa-solid fa-headset"></i>
           </div>
           
-          <h3 className="text-xl font-medium text-gray-800">Asistente de Viajes</h3>
+          <h3 className="text-3xl font-bold text-gray-800 mb-2">Asistente de Viajes</h3>
           
           {callStatus === "dialing" && (
             <p className="text-gray-500 mt-2 flex items-center">
@@ -105,13 +105,13 @@ const CallModal: React.FC<CallModalProps> = ({ isOpen, onClose, phoneNumber }) =
           )}
           
           {/* Número de teléfono formateado */}
-          <p className="text-gray-400 text-sm mt-2 mb-6 flex items-center">
+          <p className="text-gray-400 text-xl mt-4 mb-8 flex items-center">
             <i className="fa-solid fa-phone mr-2"></i>
             {phoneNumber.replace(/(\d{3})(\d{3})(\d{4})/, '+$1 $2 $3')}
           </p>
           
           {/* Botones de acción */}
-          <div className="flex gap-8 mt-4 justify-center">
+          <div className="flex gap-10 mt-6 justify-center">
             {callStatus !== "ended" && (
               <>
                 <button
@@ -154,9 +154,9 @@ const CallModal: React.FC<CallModalProps> = ({ isOpen, onClose, phoneNumber }) =
             )}
           </div>
           
-          <div className="mt-8 text-center text-xs text-gray-400">
+          <div className="mt-12 text-center text-lg text-gray-400">
             <p>También puedes contactarnos al:</p>
-            <p className="mt-1 font-medium flex items-center justify-center gap-1">
+            <p className="mt-2 font-medium flex items-center justify-center gap-2">
               <i className="fa-solid fa-envelope text-[#0033A0]"></i>
               serviciocliente@nullpointers.com
             </p>
@@ -167,4 +167,4 @@ const CallModal: React.FC<CallModalProps> = ({ isOpen, onClose, phoneNumber }) =
   );
 };
 
-export default CallModal; 
+export default CallModal;

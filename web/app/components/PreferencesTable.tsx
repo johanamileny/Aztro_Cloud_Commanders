@@ -7,20 +7,19 @@ interface PreferencesTableProps {
 
 export default function PreferencesTable({ preferenciasData }: PreferencesTableProps) {
   return (
-    <div className="overflow-x-auto rounded-xl shadow-xl">
-      <table className="min-w-full border-collapse bg-white">
+    <div className="overflow-x-auto rounded-2xl shadow-2xl">
+      <table className="min-w-full border-collapse bg-white text-xl">
         <thead>
-          <tr className="bg-gradient-to-r from-blue-600 to-blue-800 text-white text-left">
-            <th className="px-6 py-4 font-semibold text-sm uppercase tracking-wider">Entorno</th>
-            <th className="px-6 py-4 font-semibold text-sm uppercase tracking-wider">Clima</th>
-            <th className="px-6 py-4 font-semibold text-sm uppercase tracking-wider">Actividad</th>
-            <th className="px-6 py-4 font-semibold text-sm uppercase tracking-wider">Alojamiento</th>
-            <th className="px-6 py-4 font-semibold text-sm uppercase tracking-wider">Tiempo de Viaje</th>
-            <th className="px-6 py-4 font-semibold text-sm uppercase tracking-wider">Rango de Edad</th>
-            {/* <th className="px-6 py-4 font-semibold text-sm uppercase tracking-wider">Destinos</th> */}
+          <tr className="bg-gradient-to-r from-blue-600 to-blue-800 text-white text-left text-2xl">
+            <th className="px-8 py-6 font-semibold uppercase tracking-wider">Entorno</th>
+            <th className="px-8 py-6 font-semibold uppercase tracking-wider">Clima</th>
+            <th className="px-8 py-6 font-semibold uppercase tracking-wider">Actividad</th>
+            <th className="px-8 py-6 font-semibold uppercase tracking-wider">Alojamiento</th>
+            <th className="px-8 py-6 font-semibold uppercase tracking-wider">Tiempo de Viaje</th>
+            <th className="px-8 py-6 font-semibold uppercase tracking-wider">Rango de Edad</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-gray-200">
+        <tbody className="divide-y divide-gray-200 text-lg">
           {preferenciasData.map((preferencia, i) => (
             <tr 
               key={i} 
@@ -32,14 +31,6 @@ export default function PreferencesTable({ preferenciasData }: PreferencesTableP
               <td className="px-6 py-4 whitespace-nowrap">{PreferenciasLabels[preferencia.alojamiento as keyof typeof PreferenciasLabels] || preferencia.alojamiento}</td>
               <td className="px-6 py-4 whitespace-nowrap">{PreferenciasLabels[preferencia.tiempoViaje as keyof typeof PreferenciasLabels] || preferencia.tiempoViaje}</td>
               <td className="px-6 py-4 whitespace-nowrap">{PreferenciasLabels[preferencia.rangoEdad as keyof typeof PreferenciasLabels] || preferencia.rangoEdad}</td>
-              {/* <td className="px-6 py-4">
-                <ul className="list-disc pl-5 text-sm">
-                  {Array.isArray(preferencia.destinoResponseList) &&
-                    preferencia.destinoResponseList.map((destino, index) => (
-                      <li key={index} className="text-gray-700 py-1">{destino.nombre} ({destino.nombre_continente})</li>
-                    ))}
-                </ul>
-              </td> */}
             </tr>
           ))}
         </tbody>

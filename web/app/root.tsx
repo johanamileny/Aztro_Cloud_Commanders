@@ -6,11 +6,11 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import appStylesHref from "./app.css?url";
-import MenuNavegacion from "./routes/menu-navegacion";
+import Navbar from "~/components/Navbar";
+import Footer from "./components/Footer";
+import "./tailwind.css";
 
 export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: appStylesHref },
   {
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap",
@@ -43,11 +43,13 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
-        <MenuNavegacion />
-        <div id="detail">
+      <body className="bg-background-white text-text min-h-screen">
+        <Navbar />
+        {/* Espaciado superior para la navbar y espaciado inferior para el footer */}
+        <div id="detail" className="pt-20 pb-2 min-h-[calc(100vh-4rem-3rem)]">
           <Outlet />
         </div>
+        <Footer />
         <ScrollRestoration />
         <Scripts />
         <noscript>
